@@ -1,0 +1,107 @@
+<html>
+	<head>
+		<meta charset="utf8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="style.css" rel="stylesheet">
+		<title>Farnet App</title>
+
+		<script src="jquery-1.11.0.min.js"></script>
+		
+		<script>
+			$(document).ready(function(){
+				
+				$(".btn").click(function(){
+					var ip = $('.ip').val();
+					var user = $('.user').val();
+					var pass = $('.pass').val();
+					$.get("http://192.168.1.9/faranet/test2.php",{'ip':ip ,'user': user,'pass':pass  },function(data){
+						alert(data);
+						$(".whitebox").html(data);
+					});
+				});
+				
+		
+			});
+		</script>
+		<script src="app.js"></script>
+		<script>
+		</script>
+
+		<style>
+			body{
+				background: url(images/trafficBG.jpg);
+				background-size: cover;
+			}
+			input {
+				widtH:100%;
+				min-height:30px;
+				font-size: 20px;
+				border:1px solid #b3dcf5;
+				background: #fff;
+				margin-bottom:10px;
+				padding:4px 5px;
+			}
+			button {
+				background: #52b6f5;
+				border: 1px solid #238aca;
+				color:#fff;
+				padding:5px 20px;
+				font-size: 110%;
+			}
+			.item {
+				background: #f3f1e0;
+				border:1px solid  #e3cd5e;
+				border-radius: 6px;
+				width:100%;
+				display: block;
+				padding:10px 0px;
+				color: #926911;
+				font-size: 95%;
+				margin-bottom:10px;
+				text-align: center;
+				box-shadow:0px 2px 3px #333;
+			}
+			.title{
+				background: #bd990a;
+				color:#fff;
+				width:100%;
+				padding:10px 0;
+				margin-bottom: 12px;
+			}
+			.whitebox{
+				width:100%;
+				height:auto;
+				padding:10px;
+				box-sizing:border-box;
+				background:#fff;
+				border:2px solid #e9e9e9;
+				box-shadow: 0px 3px 6px #444;
+				margin-top:12px;
+				border-radius: 12px;
+			}
+		</style>
+
+	</head>
+	<body>
+		<div class="title">
+			<h2 style="text-align: center;">بررسی شبکه</h2>
+			<p style="text-align: center;margin-bottom:15px;" align="center">بررسی شبکه داخلی فارانت</p>
+
+		</div>
+		<div class="main" id="main">
+			<input class="ip" name="ip" type="text" placeholder="192.168.88.1">
+			<input class="user" name="user" type="text" placeholder="نام کاربری">
+			<input class="pass" name="pass" type="password" placeholder="کلمه عبور">
+			<button class="btn">بررسی</button>
+
+			<div class="whitebox">
+					
+			</div>
+
+			<div style="color: #fff;box-shadow:0px 2px 3px #333;border-bottom:1px solid #fff;margin:40px 0;margin-bottom:7px;width:100%"></div>
+			<p style="color: #fff;text-shadow:0px 2px 3px #333;text-align: center;" align="center">فارانت ۱۳۹۳ &copy;</p>
+		</div>
+
+
+	</body>
+</html>

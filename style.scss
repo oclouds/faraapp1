@@ -1,0 +1,241 @@
+// style sheet By mrajabi [UI/UX Developer] -> @m_rajbi On Twitter
+// morajabi.github.io
+// mrajabi.ml 
+
+@import url("fonts/WebYekan/stylesheet.css");
+@import url("fonts/BMitra/stylesheet.css");
+*{
+	padding:0;
+	margin:0;
+	font-family: 'WebYekan';
+}
+
+
+.main {
+	width: 99%;
+	margin:0 auto;
+	box-sizing: border-box;
+	padding:10px;
+}
+.col,.forthRow{
+	box-shadow: 0px 0px 4px rgba(15, 15, 15, 0.51);
+}
+.col.social{
+	box-shadow: none;
+	img{
+		box-shadow: 0px 0px 4px rgba(15, 15, 15, 0.51);
+	}
+}
+
+#row {
+	width: 100%;
+
+	
+	&.firstRow{
+		.head{
+			height:100%;
+			width:100%;
+			background: url("images/mainBG.jpg") no-repeat;
+			background-size: cover;
+			
+			.text_container{
+				background:#e74c3c;
+				width:40%;
+				height:100%;
+				float:right;
+				position:relative;
+				
+				.inner_container{
+					width:100%;
+					height:90px;
+					text-align:center;
+					color: #f5f1f1;
+					position:absolute;
+					top: 50%;
+					margin-top:-45px;
+					p{
+						display: block;
+						font-size:16px;
+						line-height: 1em;
+					}
+					img{
+						display: block;
+						margin: -2px auto;
+					}
+					span{
+						display: block;
+						font-size:12px;
+						font-family: 'BMitra';
+						opacity: 0.9;
+					}
+				}
+			}
+		}
+	}
+	
+	&.secondRow{
+		margin-top:10px;
+		.time{
+			height:100%;
+			width:100%;
+			background: url("images/timeBG.jpg") center bottom no-repeat;
+			background-size: cover;
+			float:left;
+			position:relative;
+			.text_container{
+				background:#1abc9c;
+				width:100%;
+				height:55%;
+				float:right;
+				bottom:0;
+				position:absolute;
+				overflow: hidden;
+				text-align:center;
+				color: #f5f1f1;
+				
+				p{
+					display: block;
+					font-size:16px;
+					line-height: 1em;
+					width:100%;
+					margin-top:5%;
+					
+				}
+				img{
+					position:absolute;
+					width:60px;
+					height:60px;
+					bottom:-5px;
+					right:-10px;
+				}
+				span{
+					display: block;
+					font-size:28px;
+					font-family: 'BMitra';
+					opacity: 0.9;
+					direction: rtl;
+					position:absolute;
+					bottom:20%;
+					left:25%;
+				}
+			
+			}
+
+		}
+		.traffic{
+			height:100%;
+			width:100%;
+			background: url("images/trafficBG.jpg") no-repeat;
+			background-size: cover;
+			float:right;
+			position:relative;
+			.text_container{
+				background:#3498db;
+				width:100%;
+				height:55%;
+				float:right;
+				bottom:0;
+				position:absolute;
+				overflow: hidden;
+				text-align:center;
+				color: #f5f1f1;
+				
+				p{
+					display: block;
+					font-size:16px;
+					line-height: 1em;
+					width:100%;
+					margin-top:7%;
+					
+				}
+				img{
+					position:absolute;
+					width:60px;
+					height:60px;
+					bottom:-5px;
+					right:-20px;
+				}
+				span{
+					display: block;
+					font-size:28px;
+					font-family: 'BMitra';
+					opacity: 0.9;
+					direction: rtl;
+					position:absolute;
+					bottom:20%;
+					left:15%;
+				}
+			
+			}
+		}
+	}
+	
+	&.thirdRow{
+		margin-top:10px;
+		.tamdid{
+			height:100%;
+			width:100%;
+			background: url("images/tamdidBG.jpg") no-repeat;
+			background-size: cover;
+			float:left;
+			
+			.text_container{
+				background:#e56c19;
+				width:40%;
+				height:100%;
+				float:left;
+				position:relative;
+				
+				.inner_container{
+					width:100%;
+					height:120px;
+					text-align:center;
+					color: #f5f1f1;
+					position:absolute;
+					top: 50%;
+					margin-top:-60px;
+					p{
+						display: block;
+						font-size:16px;
+						line-height: 1.3em;
+					}
+					img{
+						display: block;
+						margin: 5px auto;
+					}
+					span{
+						display: block;
+						font-size:13px;
+						font-family: 'BMitra';
+						opacity: 0.9;
+						line-height: 1.2em;
+					}
+				}
+			}
+
+		}
+		.social{
+			height:100%;
+			width:100%;
+			background-size: 100% center;
+			float:right;
+		}
+	}
+	
+	&.forthRow{
+		margin-top:10px;
+		width:100%;
+		height:50px;
+		background: #8e44ad;
+		box-sizing: border-box;
+		padding:10px;
+		line-height: 30px;
+		color: #deeffc;
+		text-align: right;
+		margin-bottom:10px;
+		span{
+			margin-right:10px;
+		}
+	}
+	
+}

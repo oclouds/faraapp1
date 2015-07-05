@@ -1,0 +1,144 @@
+<html>
+	<head>
+		<meta charset="utf8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="style.css" rel="stylesheet">
+		<title>Farnet App</title>
+		<script src="jquery-1.11.0.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				var logged = localStorage.getItem("logged");
+				if(logged != 1 && !logged){
+					window.location = 'login.html';
+				} else {	
+					console.log(localStorage.getItem("user"));
+
+							$('.gig').html(localStorage.getItem("info.gig")+"گیگ ");
+							$('.rooz').html(localStorage.getItem("info.rooz")+"روز ");
+							$('.service').html(localStorage.getItem("info.service"));
+							
+							if(localStorage.getItem("info.status")=='on'){
+								var status = 'فعال';
+							}else if(localStorage.getItem("info.status")=='off'){
+								var status = 'غیرفعال';
+							}
+							$('.status').html( "وضعیت : "+status );
+					
+					$.getJSON("http://oclouds.ir/faranet/index.php?user="+localStorage.getItem("user")+"&pass="+localStorage.getItem("pass"), function( dataa ) {
+						console.log(dataa);
+						var data = dataa[0];
+						if(data[0]!='0'){
+							// SAVING Extra Information
+							
+							localStorage.setItem("info.status", data[0]);
+							localStorage.setItem("info.gig", data[1]);
+							localStorage.setItem("info.rooz", data[2]);
+							localStorage.setItem("info.service", data[3]);
+							localStorage.setItem("info.name", data[4]);
+							
+							
+							$('.gig').html(localStorage.getItem("info.gig")+"گیگ ");
+							$('.rooz').html(localStorage.getItem("info.rooz")+"روز ");
+							$('.service').html(localStorage.getItem("info.service"));
+							
+							if(localStorage.getItem("info.status")=='on'){
+								var status = 'فعال';
+							}else if(localStorage.getItem("info.status")=='off'){
+								var status = 'غیرفعال';
+							}
+							$('.status').html( "وضعیت : "+status );
+							
+						}else{
+							window.location = 'login.html';
+						}
+					});
+					
+							
+					
+				}
+				
+				$(".tamdid .text_container").click(function(){
+					
+					window.location = 'links.html';
+				});
+				
+				
+				
+				
+			});
+		</script>
+		
+
+		
+		
+		<script src="app.js"></script>
+	</head>
+	<body>
+
+		
+		
+		<div class="main" id="main">
+			
+			<section id="row" class="firstRow li">
+				<div class="col head">
+					<div class="text_container">
+						<div class="inner_container">
+							<p>فارانت</p>
+							<img src="images/main.png" width="50px">
+							<span>شروع تازه ای از ارتباطات</span>
+														<span class="status"></span>
+
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			<section id="row" class="secondRow">
+				<div class="col traffic li">
+					<div class="text_container">
+							<p>باقی مانده ترافیک شما</p>
+							<span class="gig">گیگ</span>
+							<img src="images/traffic.png">
+					</div>
+				</div>
+				<div class="col time li">
+					<div class="text_container">
+							<p>زمان باقی مانده سرویس</p>
+							<span class="rooz"> روز</span>
+							<img src="images/time.png">
+					</div>
+				</div>
+			</section>
+			
+			<section id="row" class="thirdRow">
+				<div class="col tamdid li">
+					<div class="text_container">
+						<div class="inner_container">
+							<p>تمدید سرویس</p>
+							<img src="images/tamdid.png" width="50px">
+							<span><span class="service"></span></span>
+						</div>
+					</div>
+				</div>
+				<div class="col social li">
+					<img src="images/googleplus.jpg" width="100%">
+					<img src="images/facebook.jpg" width="100%">
+					<img src="images/twitter.jpg" width="100%">
+				</div>
+			</section>
+			
+			<section id="row" class="forthRow li">
+				<img src="images/status.png" width="30px" style="float:right;">
+				<a style="float:right;" href="mikrotik.html">بررسی شبکه داخلی فارانت</a>
+			</section>
+			<section id="row" class="forthRow li">
+				<img src="images/logout.png" width="25px"  style="float:right;">
+				<a style="float:right;" href="logout.html">خروج</a>
+			</section>
+		
+		</div>
+
+
+		
+	</body>
+</html>

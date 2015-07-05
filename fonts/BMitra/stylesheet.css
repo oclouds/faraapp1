@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'BMitra';
+    src: url('BMitra.eot');
+    src: url('BMitra.eot?#iefix') format('embedded-opentype'),
+         url('BMitra.woff') format('woff'),
+         url('BMitra.ttf') format('truetype');
+         
+}
+@font-face {
+    font-family: 'BMitra';
+    
+    src: url('BMitraBold.eot');
+    src: url('BMitraBold.eot?#iefix') format('embedded-opentype'),
+         url('BMitraBold.woff') format('woff'),
+         url('BMitraBold.ttf') format('truetype');
+		 font-weight: bold;
+}
